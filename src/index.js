@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 // react route libs
-import { BrowserRouter, Route, Link, Switch, NavLink} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
 
 
-//Components 
+//Components  
 import Posts from './components/posts';
 import Profiles from './components/profiles';
 import PostItems from './components/post-items'
 import NotFound from './components/404'
+import LifeCycle from './components/lifeCycle'
 
 class App extends Component {
     render() {
@@ -28,7 +29,7 @@ ReactDOM.render(
                 <NavLink to='/' activeClassName="selected" >Home</NavLink><br/>
                 <NavLink to='/post' >Posts</NavLink><br />
                 <NavLink to='/profile'>Profiles</NavLink><br />
-
+                <NavLink to='/life'>LifeCycle</NavLink><br />
                 {/* <Link to='/'>Home</Link><br />
                 <Link to='/post'>Posts</Link><br />
                 <Link to='/profile'>Profiles</Link><br /> */}
@@ -37,6 +38,7 @@ ReactDOM.render(
             <Switch>
                 <Route path="/post/:id" component={PostItems}></Route>
                 <Route path="/post" component={Posts}></Route>
+                <Route path="/life" component={LifeCycle}></Route> 
                 <Route path="/profile" component={Profiles}></Route>
                 <Route exact path="/" component={App}></Route>
                 <Route path="*" component={NotFound}></Route>
